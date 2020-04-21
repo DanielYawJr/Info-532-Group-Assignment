@@ -1,0 +1,47 @@
+ /* formatting h1 headers */
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black
+}
+
+ /* general formatting for the bocy */
+body {
+  background-color: whitesmoke;
+  color: black;
+}
+
+ /* unvisited link */
+ a:link {
+  color: blue;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: red;
+}
+
+/* selected link */
+a:active {
+  color: green;
+} 
+
+ /* formatting the navigation table on the homepage */
+table.left-nav-table { 
+  background-color:#49ff33; 
+  padding:6px; 
+  float: left; /* makes the layout as required */
+} 
+
+ /* formatting the text area on the homepage */
+right-text-area {
+  float: left;  /* makes the layout as required */
+  width: 70%;  /* makes the layout take up most space */
+  float: left;
+  padding: 6px;
+}
+
