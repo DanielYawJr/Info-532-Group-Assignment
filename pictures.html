@@ -9,19 +9,34 @@ Group Assignment
 <html> 
 
 <head> 
-    
+    <!-- tab title -->
     <title>Favorite Pictures</title>
     
-    <link rel="stylesheet" href="css.css"> <! –– referencing external css ––> 
-
+   	<!-- Link to external common style sheet across all html files -->
+    <link rel="stylesheet" href="css.css"> 
 </head> 
 
 <body>  
     <script>
+        /* Decalre picture gallery to drive slide show */
+        var galleryArray = new Array();
+
+        /* Declare pointer to current image in the array */
+        var currentImage = 0;
+
+        /* Function to rotate images seleceted by the user */
+        function rotateImages(){
+            /* Update the slideshow element to the next image selected by the user */
+            document.getElementById("slideshow").setAttribute("src", "pictures/"+galleryArray[currentImage].name);
+            /* Set the pointer the next value on next call to change the current image */
+            currentImage = ( currentImage<galleryArray.length - 1) ? currentImage + 1 : 0
+        }
+
+
         /* for loop of all possible values, compare passed to each valid set return to true if one matches */
         function displayPictures(picCount) {
 
-            /* Create the table to display the pictures*/
+            /* Create the table to display the pictures */
             document.getElementById("pictures").innerHTML = "<table>";
             document.getElementById("pictures").innerHTML += "<tr>";
             for (i = 1; i <= picCount; i++) {
@@ -31,14 +46,26 @@ Group Assignment
                     document.getElementById("pictures").innerHTML += "<tr>";
                 }
             }
-            /* Create the end tag for the table displaying the pictures*/
+            /* Create the end tag for the table displaying the pictures */
             document.getElementById("pictures").innerHTML += "</tr>";
             document.getElementById("pictures").innerHTML += "</table>";
         }
 
-    </script>
+        var loadPictures=function(){ 
+            // Ask the user for a set of picture to display in the slide show
+            var fileInput = document.querySelector("#picureFiles");
 
-    
+            // Load files selected by the user into the gallery array
+            galleryArray = fileInput.files;
+
+            // Add the layer that will be updated with the pictures selected by the user
+            document.getElementById("div-slideshow").innerHTML = "<img id=slideshow style=width: 400px; height: 266px; src=/>"
+
+        }
+
+
+    </script>
+   
 	<nav> 
         <a href = "index.html">Home</a> | 
         <a href = "background.html">Background</a> |
@@ -51,12 +78,30 @@ Group Assignment
     <h1>Favorite Pictures</h1> 
 
     <div>
-        <p id="pictures" class="pic-table">
-        </p>
+        <!-- Display the instuctions to the user -->
+        <p>Please click on the "Choose Files" below to select the images for your slide show</p>
+
+        <!-- define button to ask user to select images for slide show -->
+        <input id="picureFiles" multiple type="file">
+        <p></p>
     </div>
 
-    <button onclick="displayPictures(13)">Load Pictures</button>
+    <div id="div-slideshow" style="width: 170px; height: 160px" >
+    </div>
 
+    <!-- 
+    <button onclick="loadPictures()">Load Pictures</button>
+    -->
+    
+<script>
+    document.querySelector("#picureFiles").onchange = loadPictures;
+
+    window.onload=function() {
+        /* Set the image rotation function to execute every 2500 milliseconds */
+        setInterval("rotateImages()", 2500);
+
+    }   
+</script>
 </body> 
 
 </html>
