@@ -44,4 +44,15 @@ right-text-area {
   float: left;
   padding: 6px;
 }
+.pic-table , th, td {
+  padding-right:5px;
+  padding-bottom: 5px;
+  padding-top:5px;
+  padding-left:5px;
+}
+.pic-img {
+  width: 400px;
+  height: 270px;
+}
+
 

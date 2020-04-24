@@ -10,14 +10,33 @@ Group Assignment
 
 <head> 
     
-    <title>Interests</title>
+    <title>Favorite Pictures</title>
     
     <link rel="stylesheet" href="css.css"> <! –– referencing external css ––> 
 
 </head> 
 
-<body> 
-    
+<body>  
+    <script>
+        /* for loop of all possible values, compare passed to each valid set return to true if one matches */
+        function displayPictures(picCount) {
+
+            /* Create the table to display the pictures*/
+            document.getElementById("pictures").innerHTML += "<table>";
+            document.getElementById("pictures").innerHTML += "<tr>";
+            for (i = 1; i <= picCount; i++) {
+                document.getElementById("pictures").innerHTML += "<td class=pic-table ><img class=pic-img src=pictures/" + i + ".jpg alt=Picture " + i + "></td>";
+                if (i % 3 == 0) {
+                    document.getElementById("pictures").innerHTML += "</tr>";
+                    document.getElementById("pictures").innerHTML += "<tr>";
+                }
+            }
+            /* Create the end tag for the table displaying the pictures*/
+            document.getElementById("pictures").innerHTML += "</tr>";
+            document.getElementById("pictures").innerHTML += "</table>";
+        }
+
+    </script>
 
     
 	<nav> 
@@ -29,32 +48,14 @@ Group Assignment
         <a href = "whatshtml.html">What's HTML?</a> 
     </nav> 
 
-    <h1>Pictures</h1> 
+    <h1>Favorite Pictures</h1> 
 
-    <table> <! –– making a 3x1 table for the images––> 
-        <tr>
-            <td><img src="pictures/1.jpg" alt="Philly Picture 1"></td> 
-            <td><img src="pictures/2.jpg" alt="Philly Picture 2"></td>
-            <td><img src="pictures/3.jpg" alt="Philly Picture 3"></td>
-        </tr>
-        <tr>
-            <td><img src="pictures/4.jpg" alt="Philly Picture 4"></td> 
-            <td><img src="pictures/5.jpg" alt="Philly Picture 5"></td>
-            <td><img src="pictures/6.jpg" alt="Philly Picture 6"></td>
-        </tr>
-        <tr>
-            <td><img src="pictures/7.jpg" alt="Philly Picture 7"></td> 
-            <td><img src="pictures/8.jpg" alt="Philly Picture 8"></td>
-            <td><img src="pictures/9.jpg" alt="Philly Picture 9"></td>
-        </tr>
-        <tr>
-            <td><img src="pictures/10.jpg" alt="Philly Picture 10"></td> 
-            <td><img src="pictures/11.jpg" alt="Philly Picture 11"></td>
-            <td><img src="pictures/12.jpg" alt="Philly Picture 12"></td>
-        </tr>
-    </table>
-    
+    <div>
+        <p id="pictures" class="pic-table">
+        </p>
+    </div>
 
+    <button onclick="displayPictures(13)">Load Pictures</button>
 
 </body> 
 
