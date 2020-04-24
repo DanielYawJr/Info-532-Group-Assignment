@@ -51,6 +51,7 @@ Group Assignment
             document.getElementById("pictures").innerHTML += "</table>";
         }
 
+        /* Load the set of images the user wants to play as a slide show */
         var loadPictures=function(){ 
             // Ask the user for a set of picture to display in the slide show
             var fileInput = document.querySelector("#picureFiles");
@@ -59,8 +60,7 @@ Group Assignment
             galleryArray = fileInput.files;
 
             // Add the layer that will be updated with the pictures selected by the user
-            document.getElementById("div-slideshow").innerHTML = "<img id=slideshow style=width: 400px; height: 266px; src=/>"
-
+            document.getElementById("div-slideshow").innerHTML = "<img id=slideshow class=pic-img src=/>"
         }
 
 
@@ -75,7 +75,7 @@ Group Assignment
         <a href = "whatshtml.html">What's HTML?</a> 
     </nav> 
 
-    <h1>Favorite Pictures</h1> 
+    <h1> Favorite Picture Slide Show </h1> 
 
     <div>
         <!-- Display the instuctions to the user -->
@@ -86,22 +86,19 @@ Group Assignment
         <p></p>
     </div>
 
-    <div id="div-slideshow" style="width: 170px; height: 160px" >
+    <div id="div-slideshow" casss="pic-img">
     </div>
 
-    <!-- 
-    <button onclick="loadPictures()">Load Pictures</button>
-    -->
-    
-<script>
-    document.querySelector("#picureFiles").onchange = loadPictures;
+    <script>
+        document.querySelector("#picureFiles").onchange = loadPictures;
 
-    window.onload=function() {
-        /* Set the image rotation function to execute every 2500 milliseconds */
-        setInterval("rotateImages()", 2500);
+        window.onload=function() {
+            /* Set the image rotation function to execute every 2500 milliseconds */
+            setInterval("rotateImages()", 2500);
 
-    }   
-</script>
+        }   
+    </script>
+
 </body> 
 
 </html>
