@@ -22,7 +22,7 @@ Group Assignment
         function displayPictures(picCount) {
 
             /* Create the table to display the pictures*/
-            document.getElementById("pictures").innerHTML += "<table>";
+            document.getElementById("pictures").innerHTML = "<table>";
             document.getElementById("pictures").innerHTML += "<tr>";
             for (i = 1; i <= picCount; i++) {
                 document.getElementById("pictures").innerHTML += "<td class=pic-table ><img class=pic-img src=pictures/" + i + ".jpg alt=Picture " + i + "></td>";
