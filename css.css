@@ -1,13 +1,15 @@
  /* formatting h1 headers */
 h1 {
   font-family: Arial, Helvetica, sans-serif;
-  color: black
+  color: #0000cc; font-size: 40px;text-align: center;
 }
-
+h3 {
+  color: #1e0f46;font-size: 25px; padding: 25px;
+}
  /* general formatting for the bocy */
 body {
-  background-color: whitesmoke;
-  color: black;
+  background-color: #dccccd;
+  color: #cd0202;font-size: 20px;
 }
 
  /* unvisited link */
@@ -31,14 +33,26 @@ a:active {
 } 
 
  /* formatting the navigation table on the homepage */
-table.left-nav-table { 
-  background-color:#49ff33; 
-  padding:6px; 
-  float: left; /* makes the layout as required */
+table.left-nav-table {
+  font-size: 25x;
+  border: 20px; 
+  background-color:#9478ab;
+  color: darkmagenta;
+  text-align: center;
+  padding:6x; 
+  float: center; /* makes the layout as required */
 } 
+a {
+  color:darkpurple;
+  font-family:"Lucida Console";
+  text-align:center;
+  font-size:30px;
+  padding: 15px;
+}
 
  /* formatting the text area on the homepage */
 right-text-area {
+  font-size: 40px
   float: left;  /* makes the layout as required */
   width: 70%;  /* makes the layout take up most space */
   float: left;
