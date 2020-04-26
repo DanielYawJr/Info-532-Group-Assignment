@@ -50,7 +50,7 @@ a {
 
  /* formatting the text area on the homepage */
 right-text-area {
-  font-size: 40px
+  font-size: 40px;
   float: left;  /* makes the layout as required */
   width: 70%;  /* makes the layout take up most space */
   float: left;
